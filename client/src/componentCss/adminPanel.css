@@ -1,0 +1,198 @@
+.admin_container {
+  min-width: 100%;
+  min-height: 85vh;
+  margin-top: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* navigation bar css */
+
+.admin_container > nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.admin_container > nav > .nav {
+  display: flex;
+}
+.admin_container > nav > .nav > ul {
+  background-color: rgba(0, 0, 0, 0.075);
+  list-style-type: none;
+  display: flex;
+}
+.admin_container > nav > .nav > ul > li {
+  display: flex;
+  width: 30vw;
+  min-height: fit-content;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+.admin_container > nav > .nav > ul > li:hover {
+  background-color: #6c757d;
+  cursor: pointer;
+}
+
+.admin_container > nav > .nav > ul > .activeNavBar {
+  background-color: #6c757d;
+}
+
+/* Common CSS FOR TABLES */
+thead > tr > th {
+  font-size: larger;
+  padding: 5px;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+tbody > tr > th {
+  padding: 10px;
+}
+tbody > tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.tableBody > tr > th {
+  text-align: center;
+}
+.article_table > .tableBody > tr > th > .srno {
+  width: 100px;
+}
+.tableBody > tr > th > .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tableBody > tr > th > .action > button {
+  width: 70px;
+  height: 30px;
+  margin: 5px 0px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+.tableBody > tr > th > .action > .editBtn {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.tableBody > tr > th > .action > .editBtn:hover {
+  cursor: pointer;
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+.tableBody > tr > th > .action > .deleteBtn {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.tableBody > tr > th > .action > .deleteBtn:hover {
+  cursor: pointer;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+
+/* Article Table CSS */
+.article_table {
+  border-spacing: 0;
+  margin: 5px;
+}
+.article_table > .tableBody > tr > th > img {
+  width: 15vw;
+  min-width: 200px;
+  height: 15vh;
+  min-height: 100px;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+.article_table > .tableBody > tr > th > .article > .description {
+  font-size: 12px;
+}
+
+/* CATEGORY Table CSS */
+.category_table {
+  border-spacing: 0;
+  margin: 5px;
+}
+
+/* USERS Table CSS */
+.users_table {
+  border-spacing: 0;
+  margin: 5px;
+}
+
+/* Edit Model */
+
+.editModel {
+  background: linear-gradient(
+    to right,
+    rgba(151, 191, 224, 0.7),
+    rgba(136, 134, 214, 0.7)
+  );
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.editContainer {
+  background-color: #282c34;
+  box-shadow: 0px 0px 3px 3px white;
+  color: white;
+  width: 50vw;
+  min-width: 450px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 40px;
+}
+.editModelHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cancelButton {
+  display: flex;
+  border-radius: 30px;
+  margin-top: -10px;
+  margin-right: -10px;
+  stroke-width: 1.9;
+  stroke: #b02a37;
+}
+
+.refreshButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: rgb(174, 243, 174);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+  stroke: black;
+  stroke-width: 0.8;
+  -moz-transition: all 30s linear;
+  -webkit-transition: all 30s linear;
+  transition: all 30s linear;
+}
+.refreshButtonRotation{
+    -ms-transform: rotate(-4320deg);
+    -moz-transform: rotate(-4320deg);
+    -webkit-transform: rotate(-4320deg);
+    transform: rotate(-4320deg);
+}
+.refreshButton:hover {
+  background-color: rgba(151, 191, 224, 0.808);
+}

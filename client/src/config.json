@@ -1,0 +1,9 @@
+{
+  "ROOT_URL": "http://localhost:4000/",
+  "NEWS_ARTICLE_URL": "http://localhost:4000/newsarticle/",
+  "REFRESH_NEWS_ARTICLE_URL": "http://localhost:4000/newsarticle/fromapi/",
+  "NEWS_CATEGORY_URL": "http://localhost:4000/newscategory/",
+  "GETALL_USERS_URL": "http://localhost:4000/signup/",
+  "NEWS_LOGIN_URL": "http://localhost:4000/login/",
+  "NEWS_SIGNUP_URL": "http://localhost:4000/signup/"
+}

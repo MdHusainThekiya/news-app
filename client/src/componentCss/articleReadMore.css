@@ -1,0 +1,72 @@
+.article-container > .all-articles {
+  display: grid;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  grid-template-columns: 1fr auto;
+  row-gap: 1rem;
+}
+.article-container > .articleFromReadMore {
+  position: absolute;
+  top: 82px;    
+  left: 1px;
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 0px 24.5vw;
+  min-height: 818px;
+  border-radius: 20px;
+}
+.article-container > .articleFromReadMore > .title {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 10px 5px;
+  font-family: sans-serif, Arial, Helvetica;
+  font-weight: 600;
+  font-size: 24px;
+}
+.article-container > .articleFromReadMore > .description {
+  font-family: sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.article-container > .articleFromReadMore > .publishDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: sans-serif, Arial, Helvetica;
+  font-weight: 200;
+  font-size: 12px;
+  padding: 0px 5px;
+}
+.article-container > .articleFromReadMore > .publishDetails > .author{
+  flex: 1;
+  margin-left: 10px;
+}
+label{
+  font-weight: 600;
+}
+.article-container > .articleFromReadMore > .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.article-container > .articleFromReadMore > .image > img {
+  min-width: 100px;
+  width: 40vw;
+  min-height: 250px;
+  height: 40vh;
+  border-radius: 20px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.article-container > .articleFromReadMore > .content {
+  font-family: sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 5px;
+}

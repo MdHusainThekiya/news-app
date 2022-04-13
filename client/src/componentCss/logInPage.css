@@ -1,0 +1,163 @@
+.Main-container {
+  margin-top: 3vh;
+  width: 100vw;
+  height: 77vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subMainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  box-shadow: 0px 0px 3px 3px white;
+  height: fit-content;
+  border-radius: 40px;
+}
+.login-Container {
+  background-color: #282c34;
+  min-width: 25vw;
+  min-height: 75vh;
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.register-Container {
+  background-color: #282c34;
+  min-width: 25vw;
+  min-height: 75vh;
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.borderContainer {
+  position: absolute;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+}
+.borderRight {
+  border-right: 1px solid white;
+  height: 60vh;
+  transform: translateX(20px);
+  z-index: 0;
+}
+.centerCircle {
+  background-color: #282c34;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid white;
+  z-index: 1;
+}
+.centerCircle:hover {
+  background-color: rgb(248, 90, 90);
+  color: black;
+  border: 2px solid black;
+}
+.subContainerHeader {
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+.subContainerHeader > h2 {
+  color: white;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 25vw;
+  height: 30vh;
+  margin-top: 50px;
+  justify-content: center;
+}
+form > ul {
+  display: flex;
+  flex-direction: column;
+}
+form > ul > li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+form > ul > li > input {
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: #282c34;
+  color: white;
+  padding: 0 5px;
+  font-size: 16px;
+}
+form > ul > li > input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #282c34 inset !important;
+  box-shadow: 0 0 0 30px #282c34 inset !important;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+}
+
+form > button {
+  width: 120px;
+  height: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  background-color: rgba(151, 191, 224, 0.932);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+}
+form > button:hover {
+  background-color: rgb(174, 243, 174);
+  box-shadow: 0px 0px 1px 1px white;
+  color: black;
+}
+.register-Container > form {
+  height: fit-content;
+  margin-top: 10px;
+  gap: 30px;
+}

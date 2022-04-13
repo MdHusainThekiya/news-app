@@ -1,0 +1,17 @@
+.newsContainer {
+  display: grid;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationNav{
+  display: flex;
+  width: fit-content;
+  justify-content: flex-end;
+  margin-left: 1.2%;
+  margin-top: 10px;
+}
