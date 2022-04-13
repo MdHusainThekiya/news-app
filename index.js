@@ -28,14 +28,14 @@ const port = process.env.PORT || 4000;
 app.listen(port, console.log(`Listning on port ${port}`));
 
 // Connecting Redis Server One Time
-async function redisClientConnect() {
-  try {
-    await redisClient.redisClientConnect();
-  } catch (error) {
-    console.log(
-      "Unable to connect with redisClient In Index.Js =>",
-      error.message
-    );
-  }
-}
-redisClientConnect();
+// async function redisClientConnect() {
+//   try {
+//     await redisClient.redisClientConnect();
+//   } catch (error) {
+//     console.log(
+//       "Unable to connect with redisClient In Index.Js =>",
+//       error.message
+//     );
+//   }
+// }
+// redisClientConnect();

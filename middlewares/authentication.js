@@ -16,24 +16,26 @@ const verifyUser = async (req, res, next) => {
     });
   }
   try {
-    // find token In redis
-    async function findTokenInRedis() {
-      if (await tokenController.findOneTokenInRedis(token)) {
-        // verifying token
-        const decode = jsonwebtoken.verify(token, process.env.JWT_SECRET_KEY);
-        console.log("authentication successful of USER =>", decode.email);
-        userDataFromJwtDecode = decode;
-        next();
-      } else {
-        console.log("Token Invalid / Expired from redis, unable to verify");
-        return res.status(404).send({
-          message: "Pl provide Valid Token",
-          totalCount: 0,
-          status: [],
-        });
-      }
-    }
-    findTokenInRedis();
+    // // find token In redis
+    // async function findTokenInRedis() {
+    //   if (await tokenController.findOneTokenInRedis(token)) {
+    //   //  below verify token code will be here
+    //   } else {
+    //     console.log("Token Invalid / Expired from redis, unable to verify");
+    //     return res.status(404).send({
+    //       message: "Pl provide Valid Token",
+    //       totalCount: 0,
+    //       status: [],
+    //     });
+    //   }
+    // }
+    // findTokenInRedis();
+    
+    // verifying token
+    const decode = jsonwebtoken.verify(token, process.env.JWT_SECRET_KEY);
+    console.log("authentication successful of USER =>", decode.email);
+    userDataFromJwtDecode = decode;
+    next();
   } catch (error) {
     console.log("Token Invalid OR Expired, unable to verify");
     return res.status(404).send({

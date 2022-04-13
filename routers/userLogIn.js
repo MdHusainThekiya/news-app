@@ -26,8 +26,10 @@ router.post("/", async (req, res) => {
       // =======> below commented code is of mongoTokenContoller currently in scrap fliles <=======
       // tokenController.insertToken(token, decode);
       // tokenController.autoDeleteToken(token, decode);
-
-      tokenController.insertTokenInRedis(token, decode)
+      
+      
+      // =======> below commented code is of redisTokenContoller currently in scrap fliles <=======
+      // tokenController.insertTokenInRedis(token, decode)
       
       res.status(200).send({
         message: "Login successful",
