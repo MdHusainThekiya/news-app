@@ -1,9 +1,9 @@
 {
-  "ROOT_URL": "http://localhost:4000/",
-  "NEWS_ARTICLE_URL": "http://localhost:4000/newsarticle/",
-  "REFRESH_NEWS_ARTICLE_URL": "http://localhost:4000/newsarticle/fromapi/",
-  "NEWS_CATEGORY_URL": "http://localhost:4000/newscategory/",
-  "GETALL_USERS_URL": "http://localhost:4000/signup/",
-  "NEWS_LOGIN_URL": "http://localhost:4000/login/",
-  "NEWS_SIGNUP_URL": "http://localhost:4000/signup/"
+  "ROOT_URL": "https://news-app-mdhusainthekiya.herokuapp.com/",
+  "NEWS_ARTICLE_URL": "https://news-app-mdhusainthekiya.herokuapp.com/newsarticle/",
+  "REFRESH_NEWS_ARTICLE_URL": "https://news-app-mdhusainthekiya.herokuapp.com/newsarticle/fromapi/",
+  "NEWS_CATEGORY_URL": "https://news-app-mdhusainthekiya.herokuapp.com/newscategory/",
+  "GETALL_USERS_URL": "https://news-app-mdhusainthekiya.herokuapp.com/signup/",
+  "NEWS_LOGIN_URL": "https://news-app-mdhusainthekiya.herokuapp.com/login/",
+  "NEWS_SIGNUP_URL": "https://news-app-mdhusainthekiya.herokuapp.com/signup/"
 }
