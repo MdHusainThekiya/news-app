@@ -1,0 +1,6 @@
+in cd/server
+
+git status
+git add .
+git commit -am "added readme file"
+git push heroku master:main
