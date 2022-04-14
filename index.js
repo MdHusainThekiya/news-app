@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 require("dotenv").config();
 const redisClient = require("./redisClient");
 const userSignUp = require("./routers/userSIgnUp");
@@ -19,8 +20,12 @@ app.use("/newsarticle", newsArticle);
 app.use("/usersessions", userSessions);
 
 //  Connecting Heroku
-if(process.env.NODE_ENV == "production"){
+if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 // Listen Routers
