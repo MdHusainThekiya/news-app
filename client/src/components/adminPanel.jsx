@@ -46,6 +46,9 @@ class AdminPanel extends Component {
       alert(
         `Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`
       );
+      if (!this.state.isUserAdmin) {
+        return window.location.assign("/");
+      }
     }
   }
 
@@ -114,12 +117,6 @@ class AdminPanel extends Component {
   };
 
   render() {
-    setTimeout(() => {
-      if (!this.state.isUserAdmin) {
-        return window.location.assign("/");
-      }
-    }, 300);
-
     return (
       <div className="admin_container">
         <nav>
