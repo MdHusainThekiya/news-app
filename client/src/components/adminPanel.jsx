@@ -23,28 +23,30 @@ class AdminPanel extends Component {
   };
 
   async componentDidMount() {
-    try{
-    const token = window.localStorage.getItem("token");
-    const userData = await axios.get(configData.GETALL_USERS_URL, {
-      headers: {
-        "Access-Control-Allow-Headers": "*",
-        token: token,
-      },
-    });
-    let sortedUsersData = userData.data.status.sort(this.compare);
-    this.setState({ usersData: sortedUsersData });
-    this.props.userDataEventInApp(this.state.usersData);
+    try {
+      const token = window.localStorage.getItem("token");
+      const userData = await axios.get(configData.GETALL_USERS_URL, {
+        headers: {
+          "Access-Control-Allow-Headers": "*",
+          token: token,
+        },
+      });
+      let sortedUsersData = userData.data.status.sort(this.compare);
+      this.setState({ usersData: sortedUsersData });
+      this.props.userDataEventInApp(this.state.usersData);
 
-    // verify JWT and filter user object to  get admin status
-    const userEmail = await jwt(token).email;
-    const isUserAdmin = await this.state.usersData.filter(
-      (userObj) => userObj.email === userEmail
-    )[0].isAdmin;
-    this.setState({ isUserAdmin: isUserAdmin });
-  }catch(error){
-    console.log(error.response);
-    alert(`Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`);
-  }
+      // verify JWT and filter user object to  get admin status
+      const userEmail = await jwt(token).email;
+      const isUserAdmin = await this.state.usersData.filter(
+        (userObj) => userObj.email === userEmail
+      )[0].isAdmin;
+      this.setState({ isUserAdmin: isUserAdmin });
+    } catch (error) {
+      console.log(error.response);
+      alert(
+        `Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`
+      );
+    }
   }
 
   handleEdit = (data) => {
@@ -52,25 +54,30 @@ class AdminPanel extends Component {
     this.setState({ dataPassedOnEditClick: data });
   };
   handleDelete = async (data) => {
-    try{
+    try {
       const token = window.localStorage.getItem("token");
-    let currentRouter = 'newsarticle'
-    if(this.state.activeTableNavNumber === 2){
-      currentRouter = 'newscategory'
-    }else if(this.state.activeTableNavNumber === 3){
-      currentRouter = 'signup'
+      let currentRouter = "newsarticle";
+      if (this.state.activeTableNavNumber === 2) {
+        currentRouter = "newscategory";
+      } else if (this.state.activeTableNavNumber === 3) {
+        currentRouter = "signup";
+      }
+      const deleteData = await axios.delete(
+        `${configData.ROOT_URL}${currentRouter}/${data._id}/`,
+        {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+            token: token,
+          },
+        }
+      );
+      alert(`${deleteData.data.message}`);
+      return window.location.reload(true);
+    } catch (error) {
+      alert(
+        `Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`
+      );
     }
-    const deleteData = await axios.delete((`${configData.ROOT_URL}${currentRouter}/${data._id}/`), {
-      headers: {
-        "Access-Control-Allow-Headers": "*",
-        token: token,
-      },
-    })
-    alert(`${deleteData.data.message}`)
-    return window.location.reload(true)
-  }catch(error){
-    alert(`Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`);
-  }
   };
 
   onTableNavClick = (activeTableNavNumber) => {
@@ -80,34 +87,38 @@ class AdminPanel extends Component {
   };
 
   refreshFeed = async () => {
-    try{
+    try {
       const token = window.localStorage.getItem("token");
-    this.setState({ refreshButtonRotation: true });
-    const refreshData = await axios.post(
-      configData.REFRESH_NEWS_ARTICLE_URL,
-      {},
-      {
-        headers: {
-          "Access-Control-Allow-Headers": "*",
-          token: token,
-        },
+      this.setState({ refreshButtonRotation: true });
+      const refreshData = await axios.post(
+        configData.REFRESH_NEWS_ARTICLE_URL,
+        {},
+        {
+          headers: {
+            "Access-Control-Allow-Headers": "*",
+            token: token,
+          },
+        }
+      );
+      if (refreshData.data.status[0].length > 0) {
+        window.location.assign("/");
+      } else {
+        alert("data not recieved from server : 400");
+        return window.location.assign("/");
       }
-    );
-    if (refreshData.data.status[0].length > 0) {
-      window.location.assign("/");
-    } else {
-      alert("data not recieved from server : 400")
-      return window.location.assign('/')
+    } catch (error) {
+      alert(
+        `Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`
+      );
     }
-  }catch(error){
-    alert(`Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`);
-  }
   };
 
   render() {
     setTimeout(() => {
-      if(!(this.state.isUserAdmin)){ return (window.location.assign('/')) }
-    }, 100);
+      if (!this.state.isUserAdmin) {
+        return window.location.assign("/");
+      }
+    }, 300);
 
     return (
       <div className="admin_container">
@@ -372,7 +383,10 @@ class AdminPanel extends Component {
               </div>
             </div>
             <div className="form">
-              <DataEditByAdmin data={this.state.dataPassedOnEditClick} activeTableNavNumber={this.state.activeTableNavNumber}/>
+              <DataEditByAdmin
+                data={this.state.dataPassedOnEditClick}
+                activeTableNavNumber={this.state.activeTableNavNumber}
+              />
             </div>
           </div>
         </div>
