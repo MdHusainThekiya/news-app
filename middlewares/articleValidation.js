@@ -1,4 +1,5 @@
 const { Validator } = require("node-input-validator");
+const articleController = require('../controllers/articleController');
 
 const validateNewsArticle = async (req, res, next) => {
   try {
@@ -61,7 +62,7 @@ const validateTitleForNewNewsArticle = async (req, res, next) => {
     }
     next();
   } catch (error) {
-    console.log("unable to validate article =>", error.message);
+    console.log("unable to validate article =>", error);
     return res.status(400).send({
       message: "unable to validate article",
       totalCount: 0,
