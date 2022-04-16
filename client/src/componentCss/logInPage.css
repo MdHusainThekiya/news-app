@@ -1,12 +1,12 @@
 .Main-container {
   margin-top: 3vh;
   width: 100vw;
-  height: 77vh;
+  height: fit-content;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 .subMainContainer {
+  margin-top: 1vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +17,6 @@
 }
 .login-Container {
   background-color: #282c34;
-  min-width: 25vw;
-  min-height: 75vh;
   width: 350px;
   height: 500px;
   display: flex;
@@ -29,8 +27,6 @@
 }
 .register-Container {
   background-color: #282c34;
-  min-width: 25vw;
-  min-height: 75vh;
   width: 350px;
   height: 500px;
   display: flex;
@@ -41,13 +37,12 @@
 }
 .borderContainer {
   position: absolute;
-  height: 75vh;
   display: flex;
   align-items: center;
 }
 .borderRight {
   border-right: 1px solid white;
-  height: 60vh;
+  height: 400px;
   transform: translateX(20px);
   z-index: 0;
 }
@@ -77,8 +72,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 3vh;
+  padding: 1vh;
 }
 .subContainerHeader > h2 {
   color: white;
@@ -87,9 +82,9 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
-  width: 25vw;
-  height: 30vh;
+  gap: 20px;
+  width: fit-content;
+  height: max-content;
   margin-top: 50px;
   justify-content: center;
 }
@@ -138,9 +133,9 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
 }
 
-form > button {
+.form > button {
   width: 120px;
-  height: 35px;
+  min-height: 31px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -151,7 +146,7 @@ form > button {
   background-color: rgba(151, 191, 224, 0.932);
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
 }
-form > button:hover {
+.form > button:hover {
   background-color: rgb(174, 243, 174);
   box-shadow: 0px 0px 1px 1px white;
   color: black;
@@ -160,4 +155,34 @@ form > button:hover {
   height: fit-content;
   margin-top: 10px;
   gap: 30px;
+}
+@media only screen and (max-width: 800px) {
+  .Main-container {
+    height: fit-content;
+  }
+  .subMainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+  }
+  .login-Container {
+    width: 325px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom: 3px solid white;
+  }
+  .register-Container {
+    width: 325px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+  }
+  .borderContainer {
+    display: none;
+  }
+  
+  .form > button {
+    margin: 10px;
+  }
 }

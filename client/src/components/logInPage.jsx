@@ -28,26 +28,28 @@ class LogInPage extends Component {
     this.setState({ loginData: changedLoginData });
   };
   handleLogInFormSubmit = async (event) => {
-    try{
+    try {
       // prevent default reloading after form submit
-    event.preventDefault();
-    // post data & get token in response
-    const { data } = await axios.post(
-      configData.NEWS_LOGIN_URL,
-      this.state.loginData
-    );
-    // check the response length
-    if (data.status.length > 0) {
-      // set the token from reponse data to localstorage
-      window.localStorage.setItem("token", data.status[1]);
-      // push current location to home page
-      window.history.pushState({}, "", "/");
-      // then reload the page
-      window.location.reload(true)
-    }
-    }catch(error){
+      event.preventDefault();
+      // post data & get token in response
+      const { data } = await axios.post(
+        configData.NEWS_LOGIN_URL,
+        this.state.loginData
+      );
+      // check the response length
+      if (data.status.length > 0) {
+        // set the token from reponse data to localstorage
+        window.localStorage.setItem("token", data.status[1]);
+        // push current location to home page
+        window.history.pushState({}, "", "/");
+        // then reload the page
+        window.location.reload(true);
+      }
+    } catch (error) {
       console.log(error.response);
-      alert(`Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`);
+      alert(
+        `Expected Error => ${error.response.data.message} <= [${error.response.statusText}:${error.response.status}]`
+      );
     }
   };
 
@@ -83,44 +85,46 @@ class LogInPage extends Component {
     this.setState({ registerData: changedRegisterData });
   };
   handleRegisterFormSubmit = async (event) => {
-    try{
-    event.preventDefault();
-    console.log(this.state);
-    const { data } = await axios.post(
-      configData.NEWS_SIGNUP_URL,
-      this.state.registerData
-    );
-    if (data) {
-      const requiredData = {
-        email: this.state.registerData.email,
-        password: this.state.registerData.password,
-      };
+    try {
+      event.preventDefault();
+      console.log(this.state);
       const { data } = await axios.post(
-        configData.NEWS_LOGIN_URL,
-        requiredData
+        configData.NEWS_SIGNUP_URL,
+        this.state.registerData
       );
-      console.log(requiredData, data);
-      if (data.status.length > 0) {
-        window.localStorage.setItem("token", data.status[1]);
-        window.history.pushState({}, "", "/");
-        window.location.reload(true)
+      if (data) {
+        const requiredData = {
+          email: this.state.registerData.email,
+          password: this.state.registerData.password,
+        };
+        const { data } = await axios.post(
+          configData.NEWS_LOGIN_URL,
+          requiredData
+        );
+        console.log(requiredData, data);
+        if (data.status.length > 0) {
+          window.localStorage.setItem("token", data.status[1]);
+          window.history.pushState({}, "", "/");
+          window.location.reload(true);
+        }
       }
+    } catch (error) {
+      let expectedErrors = Object.values(error.response.data.status);
+      alert(
+        `Expected Error => ${expectedErrors.map((data) => {
+          return data.message;
+        })} <= [${error.response.statusText}:${error.response.status}]`
+      );
     }
-  } catch (error) {
-    let expectedErrors = Object.values(error.response.data.status);
-    alert(
-      `Expected Error => ${expectedErrors.map((data) => {
-        return data.message;
-      })} <= [${error.response.statusText}:${error.response.status}]`
-    );
-  }
   };
 
   render() {
     return (
       <React.Fragment>
         <div className="Main-container">
-          <div className="subMainContainer">
+          <div className="subMainContainer"
+          // style={{transform : `scale(${(1-((1366-(window.screen.width))/1366))})`}}
+          >
             <div className="login-Container">
               <div className="subContainerHeader">
                 <h2>
@@ -152,9 +156,9 @@ class LogInPage extends Component {
                     />
                   </li>
                 </ul>
-                <button type="submit">Log-In</button>
+                <button className="loginButton">Log-In</button>
               </form>
-              <div style={{ marginTop: "60px", color: "white" }}>
+              <div style={{ marginTop: "60px",marginBottom: "10px", color: "white" }}>
                 <span>New User? SignUp on right cart ==&gt;</span>
               </div>
             </div>

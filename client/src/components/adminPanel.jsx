@@ -152,7 +152,8 @@ class AdminPanel extends Component {
             </IconButton>
           </a>
         </nav>
-        <table
+       <div className="tableForAdmin">
+       <table
           className="article_table"
           style={
             this.state.activeTableNavNumber === 1 ? {} : { display: "none" }
@@ -165,8 +166,8 @@ class AdminPanel extends Component {
               <th>Article</th>
               <th>PublishedAt</th>
               <th>Author</th>
-              {/* <th>Last UpdatedAt</th>
-              <th>Last Updatedby</th> */}
+              <th>Last UpdatedAt</th>
+              {/* <th>Last Updatedby</th> */}
               <th>Action</th>
             </tr>
           </thead>
@@ -180,7 +181,7 @@ class AdminPanel extends Component {
                 <th>
                   <div className="article">
                     <div className="title">{article.title}</div>
-                    <div className="description">{article.description}</div>
+                    {/* <div className="description">{article.description}</div> */}
                   </div>
                 </th>
                 <th>
@@ -191,15 +192,15 @@ class AdminPanel extends Component {
                   </div>
                 </th>
                 <th>
-                  <div>{article.author}</div>
+                  <div className="articleAuthor">{article.author}</div>
                 </th>
-                {/* <th>
+                <th>
                   <div>
                   {article.updatedAt.split("T")[0]}<br/>
                     {article.updatedAt.split("T")[1]}
                   </div>
                 </th>
-                <th>
+                {/* <th>
                   <div>
                     {article.updatedBy}
                   </div>
@@ -357,6 +358,7 @@ class AdminPanel extends Component {
             ))}
           </tbody>
         </table>
+       </div>
         <div
           className="editModel"
           style={this.state.editButtonClick ? { display: "flex" } : {}}

@@ -8,10 +8,24 @@
   justify-content: center;
 }
 
-.paginationNav{
+.paginationNav {
   display: flex;
   width: fit-content;
   justify-content: flex-end;
   margin-left: 1.2%;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .newsContainer {
+    display: grid;
+    grid-template-columns: none;
+  }
+  .paginationNav {
+    display: flex;
+    width: fit-content;
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }

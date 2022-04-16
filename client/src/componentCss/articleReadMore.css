@@ -70,3 +70,44 @@ label{
   font-size: 16px;
   padding: 5px;
 }
+
+@media only screen and (max-width: 800px) {
+
+  .article-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .article-container > .all-articles {
+    display: none;
+  }
+  .article-container > .articleFromReadMore {
+    position: relative;
+    top: 20px;    
+    left: 0px;
+    background-color: azure;
+    display: flex;
+    flex-direction: none;
+    width: 95vw;
+    margin: 0px 0px;
+    min-height: fit-content;
+    border-radius: 20px;
+  }
+  .article-container > .articleFromReadMore > .title {
+    font-size: 20px;
+  }
+  
+  .article-container > .articleFromReadMore > .publishDetails {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2vw;
+    flex-direction: row;
+  }
+  
+  .article-container > .articleFromReadMore > .image > img {
+    min-width: 90vw;
+    width: 40vw;
+    min-height: 250px;
+    max-height: 40vh;
+  }
+}

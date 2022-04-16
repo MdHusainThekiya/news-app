@@ -12,7 +12,7 @@ const Pagination = (props) => {
 
   return (
     <React.Fragment>
-      
+      <div className="mainPaginationContainer">
       <nav className="paginationContainer">
         <ul className="pagination">
           {paginationArray.map((pageNumber) => (
@@ -34,6 +34,7 @@ const Pagination = (props) => {
           ))}
         </ul>
       </nav>
+      </div>
     </React.Fragment>
   );
 };

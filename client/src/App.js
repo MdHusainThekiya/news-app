@@ -117,11 +117,15 @@ class App extends Component {
           <Route
             path="/article"
             element={
-              <ArticleReadMore
-                article={this.state.articleFromReadMoreHandle}
-                articleData={this.state.requiredNewsContainers}
-                ReadMoreEventInApp={this.readMoreHandle}
-              />
+              window.localStorage.getItem("token") ? (
+                <ArticleReadMore
+                  article={this.state.articleFromReadMoreHandle}
+                  articleData={this.state.requiredNewsContainers}
+                  ReadMoreEventInApp={this.readMoreHandle}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
             }
             exact
           />

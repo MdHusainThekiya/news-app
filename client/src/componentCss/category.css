@@ -39,3 +39,17 @@
     align-items: center;
     justify-content: center;
   }
+
+
+  @media only screen and (max-width: 800px) {
+    .categoryContainer > nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .categoryContainer > nav > ul{
+        width: 50%;
+    }
+    .categoryContainer > nav > ul > li{
+        height: 5vh;
+    }
+}

@@ -45,3 +45,14 @@
 .pageItemActive:hover {
   background-color: wheat;
 }
+
+@media only screen and (max-width: 800px) {
+  .mainPaginationContainer{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+  .paginationContainer {
+    width: 90vw;
+  }
+}

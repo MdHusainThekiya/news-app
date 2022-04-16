@@ -5,5 +5,6 @@
   "NEWS_CATEGORY_URL": "https://news-app-mdhusainthekiya.herokuapp.com/newscategory/",
   "GETALL_USERS_URL": "https://news-app-mdhusainthekiya.herokuapp.com/signup/",
   "NEWS_LOGIN_URL": "https://news-app-mdhusainthekiya.herokuapp.com/login/",
-  "NEWS_SIGNUP_URL": "https://news-app-mdhusainthekiya.herokuapp.com/signup/"
+  "NEWS_SIGNUP_URL": "https://news-app-mdhusainthekiya.herokuapp.com/signup/",
+  "MEDIA_QUERY_WIDTH":"600px"
 }

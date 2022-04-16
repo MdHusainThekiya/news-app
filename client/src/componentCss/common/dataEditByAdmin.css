@@ -55,3 +55,18 @@
   background-color: #0b5ed7;
   border-color: #0a58ca;
 }
+@media only screen and (max-width: 800px) {
+  .dataEditForm {
+    min-height: max-content;
+    width: 100%;
+    height: 50vh;
+    min-height: 300px;
+    overflow: scroll;
+  }
+  .dataEditForm > ul > li > textarea {
+    width: 50vw;
+    max-width: 50vw;
+    max-height: 10vh;
+    min-height: 30px;
+  }
+}
