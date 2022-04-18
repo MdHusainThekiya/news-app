@@ -13,9 +13,10 @@
 }
 .categoryContainer > nav > ul > li{
     display: flex;
-    min-height: fit-content;
+    min-height: 30px;
     width: 100%;
     height: 7vh;
+    max-height: 50px;
     align-items: center;
     justify-content: center;
     font-size: 20px;
