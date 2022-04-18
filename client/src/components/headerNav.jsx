@@ -2,6 +2,7 @@ import "../componentCss/headerNav.css";
 import PowerSettingsNewRoundedIcon from "@mui/icons-material/PowerSettingsNewRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from "@mui/material/IconButton";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -32,6 +33,12 @@ class HeaderNav extends Component {
                     <LinkedInIcon style={{ fontSize: 15 }} />
                   </IconButton>
                 </a>
+                  <a href="https://github.com/MdHusainThekiya/news-app"
+                  target="_blank">
+                  <IconButton className="IconButton">
+                    <GitHubIcon style={{ fontSize: 15 }} />
+                  </IconButton>
+                  </a>
               </div>
               <div className="techStack">
                 <div className="techStackIcon">
